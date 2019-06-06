@@ -13,6 +13,8 @@ app.set('view engine', 'ejs');
 app.set('port', process.env.PORT || 3000);
 
 // middlewares
+app.use(express.json());
+app.use(express.urlencoded( { extended: false } ));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(session({
     resave: false,
