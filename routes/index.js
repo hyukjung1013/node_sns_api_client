@@ -28,7 +28,7 @@ const request = async (req, api) => {
 
 
 router.get('/', (req, res) => {
-    res.end('api client.');
+    res.render('main', { key: process.env.CLIENT_SECRET });
 });
 
 router.get('/test', async (req, res, next) => {
